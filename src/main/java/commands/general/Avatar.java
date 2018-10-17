@@ -25,14 +25,14 @@ public class Avatar extends Command {
                 Member target = event.getMessage().getMentionedMembers().get(0);
                 EmbedBuilder embedBuilder = new EmbedBuilder();
                 embedBuilder.setColor(target.getColor());
-                embedBuilder.setImage(target.getUser().getEffectiveAvatarUrl());
+                embedBuilder.setImage(target.getUser().getEffectiveAvatarUrl()+ "?size=1024");
                 event.reply(embedBuilder.build());
             } else {
                 try {
                     Member member = event.getGuild().getMembersByEffectiveName(event.getArgs(), true).get(0);
                     EmbedBuilder embedBuilder = new EmbedBuilder();
                     embedBuilder.setColor(member.getColor());
-                    embedBuilder.setImage(member.getUser().getEffectiveAvatarUrl());
+                    embedBuilder.setImage(member.getUser().getEffectiveAvatarUrl() + "?size=1024");
                     event.reply(embedBuilder.build());
                 } catch (IndexOutOfBoundsException e) {
                     event.reactError();
@@ -42,7 +42,7 @@ public class Avatar extends Command {
         } else {
             EmbedBuilder embedBuilder = new EmbedBuilder();
             embedBuilder.setColor(event.getGuild().getMember(event.getAuthor()).getColor());
-            embedBuilder.setImage(event.getAuthor().getEffectiveAvatarUrl());
+            embedBuilder.setImage(event.getAuthor().getEffectiveAvatarUrl() + "?size=1024");
             event.reply(embedBuilder.build());
         }
     }
