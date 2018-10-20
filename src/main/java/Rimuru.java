@@ -1,5 +1,9 @@
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
+import commands.audio.NowPlaying;
+import commands.audio.Play;
+import commands.audio.Skip;
+import commands.audio.Stop;
 import commands.general.About;
 import commands.general.Avatar;
 import commands.general.EightBall;
@@ -31,7 +35,11 @@ public class Rimuru {
                 new About(),
                 new Ping(),
                 new Avatar(),
-                new EightBall()
+                new EightBall(),
+                new Play(),
+                new Skip(),
+                new Stop(),
+                new NowPlaying()
         );
 
 
